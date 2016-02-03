@@ -36,34 +36,50 @@ __interrupt void DIO_port1IntFunct(){
 		if(DIO_p10FunctPtr != 0){
 			(*DIO_p10FunctPtr)();
 		}
+
+		P1IFG &= ~BIT0;
 	}else if(P1IFG & BIT1){
 		if(DIO_p11FunctPtr != 0){
 			(*DIO_p11FunctPtr)();
 		}
+
+		P1IFG &= ~BIT1;
 	}else if(P1IFG & BIT2){
 		if(DIO_p12FunctPtr != 0){
 			(*DIO_p12FunctPtr)();
 		}
+
+		P1IFG &= ~BIT2;
 	}else if(P1IFG & BIT3){
 		if(DIO_p13FunctPtr != 0){
 			(*DIO_p13FunctPtr)();
 		}
+
+		P1IFG &= ~BIT3;
 	}else if(P1IFG & BIT4){
 		if(DIO_p14FunctPtr != 0){
 			(*DIO_p14FunctPtr)();
 		}
+
+		P1IFG &= ~BIT4;
 	}else if(P1IFG & BIT5){
 		if(DIO_p15FunctPtr != 0){
 			(*DIO_p15FunctPtr)();
 		}
+
+		P1IFG &= ~BIT5;
 	}else if(P1IFG & BIT6){
 		if(DIO_p16FunctPtr != 0){
 			(*DIO_p16FunctPtr)();
 		}
+
+		P1IFG &= ~BIT6;
 	}else if(P1IFG & BIT7){
 		if(DIO_p17FunctPtr != 0){
 			(*DIO_p17FunctPtr)();
 		}
+
+		P1IFG &= ~BIT7;
 	}
 }
 
