@@ -199,6 +199,19 @@ void DIO_enableInterrupt(int port, int pin, void (*functPtr)()){
 			P1IE |= mask;			// enable interupts on this pin
 			__bis_SR_register(GIE);	// enable global interrupts
 
+			/* associate the function pointer */
+			switch(pin){
+			    case 0: DIO_p10FunctPtr = functPtr; break;
+			    case 1: DIO_p11FunctPtr = functPtr; break;
+			    case 2: DIO_p12FunctPtr = functPtr; break;
+			    case 3: DIO_p13FunctPtr = functPtr; break;
+			    case 4: DIO_p14FunctPtr = functPtr; break;
+			    case 5: DIO_p15FunctPtr = functPtr; break;
+			    case 6: DIO_p16FunctPtr = functPtr; break;
+			    case 7: DIO_p17FunctPtr = functPtr; break;
+			    default: while(1);
+			}
+
 			break;
 		}
 
@@ -209,6 +222,19 @@ void DIO_enableInterrupt(int port, int pin, void (*functPtr)()){
 			P2IFG &= ~mask;			// clear the interrupt flag
 			P2IE |= mask;			// enable interupts on this pin
 			__bis_SR_register(GIE);	// enable global interrupts
+
+            /* associate the function pointer */
+            switch(pin){
+                case 0: DIO_p20FunctPtr = functPtr; break;
+                case 1: DIO_p21FunctPtr = functPtr; break;
+                case 2: DIO_p22FunctPtr = functPtr; break;
+                case 3: DIO_p23FunctPtr = functPtr; break;
+                case 4: DIO_p24FunctPtr = functPtr; break;
+                case 5: DIO_p25FunctPtr = functPtr; break;
+                case 6: DIO_p26FunctPtr = functPtr; break;
+                case 7: DIO_p27FunctPtr = functPtr; break;
+                default: while(1);
+            }
 
 			break;
 		}
