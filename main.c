@@ -22,7 +22,7 @@ int main(void) {
     P1DIR |= (LED1 | LED2);	// use to light the LEDs
     P1OUT |= (LED1 | LED2);	// turn the LEDs on
 
-	return 0;
+    return 0;
 }
 
 void p13Int(void){
